@@ -39,6 +39,7 @@ apache::vhost { 'wordpress':
   suphp_addhandler => 'application/x-httpd-suphp',
   suphp_engine     => 'on',
   suphp_configpath => '/etc/php5/cgi',
+  override         => ['All'],
   custom_fragment  => 'RewriteLogLevel 2
                        RewriteLog /var/log/apache2/rewrite.log'
 }
@@ -53,6 +54,7 @@ apache::vhost { 'wordpress-ssl':
   suphp_addhandler => 'application/x-httpd-suphp',
   suphp_engine     => 'on',
   suphp_configpath => '/etc/php5/cgi',
+  override         => ['All'],
   custom_fragment  => 'RewriteLogLevel 2
                        RewriteLog /var/log/apache2/rewrite-ssl.log'
 }
